@@ -248,7 +248,7 @@ resource "aws_key_pair" "keypairmum" {
 resource "aws_key_pair" "keypairus" {
   provider = aws.us-east-1
   key_name = "terraform-key"
-  public_key = file("/home/ubuntu/.ssh/id_rsa.pub")
+  public_key = file("C:/Users/Vijesh/.ssh/id_rsa.pub")
 }
 
 # VPC Peering Connection Requestors side
@@ -292,21 +292,21 @@ resource "aws_instance" "instance1vpc01" {
   key_name = aws_key_pair.keypairmum.key_name
   vpc_security_group_ids = [aws_security_group.sgvpc01.id]
 
-  connection {
-    type = "ssh"
-    user = "ubuntu"
-    private_key = file("/home/ubuntu/.ssh/id_rsa")
-    host = self.public_ip
-  }
+  # connection {
+  #   type = "ssh"
+  #   user = "ubuntu"
+  #   private_key = "file(~/.ssh/id_rsa)"
+  #   host = self.public_ip
+  # }
 
-  provisioner "remote-exec" {
-    inline = [ 
-        "sudo apt update",
-        "sudo apt install apache2 -y",
-        "echo 'Welcome to Mumbai VPC01 in AP-SOUTH-1A AZ' | sudo tee /var/www/html/index.html",
-        "sudo systemctl restart apache2"
-    ]
-  }
+  # provisioner "remote-exec" {
+  #   inline = [ 
+  #       "sudo apt update",
+  #       "sudo apt install apache2 -y",
+  #       "echo 'Welcome to Mumbai VPC01 in AP-SOUTH-1A AZ' | sudo tee /var/www/html/index.html",
+  #       "sudo systemctl restart apache2"
+  #   ]
+  #}
   tags = {
     Name = "instance1vpc01"
   }
@@ -321,20 +321,20 @@ resource "aws_instance" "instance2vpc01" {
   key_name = aws_key_pair.keypairmum.key_name
   vpc_security_group_ids = [aws_security_group.sgvpc01.id]
 
-  connection {
-    type = "ssh"
-    user = "ubuntu"
-    private_key = file("/home/ubuntu/.ssh/id_rsa")
-    host = self.public_ip
-  }
-  provisioner "remote-exec" {
-    inline = [ 
-        "sudo apt update",
-        "sudo apt install apache2 -y",
-        "echo 'Welcome to Mumbai VPC01 in AP-SOUTH-1B AZ' | sudo tee /var/www/html/index.html",
-        "sudo systemctl restart apache2"
-    ]
-  }
+  # connection {
+  #   type = "ssh"
+  #   user = "ubuntu"
+  #   private_key = "file(~/.ssh/id_rsa)"
+  #   host = self.public_ip
+  # }
+  # provisioner "remote-exec" {
+  #   inline = [ 
+  #       "sudo apt update",
+  #       "sudo apt install apache2 -y",
+  #       "echo 'Welcome to Mumbai VPC01 in AP-SOUTH-1B AZ' | sudo tee /var/www/html/index.html",
+  #       "sudo systemctl restart apache2"
+  #   ]
+  # }
 
   tags = {
     Name = "instance2vpc01"
@@ -349,20 +349,20 @@ resource "aws_instance" "instance1vpc02" {
   key_name = aws_key_pair.keypairus.key_name
   vpc_security_group_ids = [aws_security_group.sgvpc02.id]
 
-  connection {
-    type = "ssh"
-    user = "ubuntu"
-    private_key = file("/home/ubuntu/.ssh/id_rsa")
-    host = self.public_ip
-  }
-  provisioner "remote-exec" {
-    inline = [ 
-        "sudo apt update",
-        "sudo apt install apache2 -y",
-        "echo 'Welcome to Virginia VPC02 in US-EAST-1D AZ' | sudo tee /var/www/html/index.html",
-        "sudo systemctl restart apache2"
-    ]
-  }
+  # connection {
+  #   type = "ssh"
+  #   user = "ubuntu"
+  #   private_key = "file(~/.ssh/id_rsa)"
+  #   host = self.public_ip
+  # }
+  # provisioner "remote-exec" {
+  #   inline = [ 
+  #       "sudo apt update",
+  #       "sudo apt install apache2 -y",
+  #       "echo 'Welcome to Virginia VPC02 in US-EAST-1D AZ' | sudo tee /var/www/html/index.html",
+  #       "sudo systemctl restart apache2"
+  #   ]
+  # }
   tags = {
     Name = "instance1vpc02"
   }
