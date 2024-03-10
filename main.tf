@@ -242,13 +242,13 @@ resource "aws_security_group" "sgvpc02" {
 resource "aws_key_pair" "keypairmum" {
   provider = aws.ap-south-1
   key_name = "terraform-key"
-  public_key = file("C:/Users/Vijesh/.ssh/id_rsa.pub")
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD6gmxxd0+6AV58VKjIIKz++A0tv5EM+MsS0vk9SfxfB/OiW7jbbLxq/Usvzl9HazkSqWWP7GyasijD3TmcNU65ixyO+xQdiyyILbF/CXtlxu+9tCudAc5f8pQyMQ0Pj9lvA1Dn1YSQeAmfqRMu+AYQhu+Adw4815p39RLKkU3LY0RACs4lfRwxWc95yP/SlhwDPfA+kVMh8D2uzOUoKpBn20k/nTgbysMDf5Ad3qqq2Ev3go6H2hWTKb6v9keWTS6hSr51MUPdEDZ5ATWj8kbu3MYb9qino1d6XV4s/Vh3gZBAQvEkgnFI1fI3Eqlvn4bvp+qa51qu+/JMFGFwI/UnBYZ/hjRkowLnyOlm7rJgFh97v04OK6dvMIhYCjoU0RXYehXMeKr7/okQDBALFroCZ7GO2Wcw+kndx0GitMSB/xXE6WLhUsx4YgTx52nnbR+KBKalYKztrAuZAobN2ItrFOociVhs4WATc6GNlzoriGtwfd4kCC3t29IBnyQIiTU= ubuntu@ip-172-31-95-172"
 }
 
 resource "aws_key_pair" "keypairus" {
   provider = aws.us-east-1
   key_name = "terraform-key"
-  public_key = file("C:/Users/Vijesh/.ssh/id_rsa.pub")
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD6gmxxd0+6AV58VKjIIKz++A0tv5EM+MsS0vk9SfxfB/OiW7jbbLxq/Usvzl9HazkSqWWP7GyasijD3TmcNU65ixyO+xQdiyyILbF/CXtlxu+9tCudAc5f8pQyMQ0Pj9lvA1Dn1YSQeAmfqRMu+AYQhu+Adw4815p39RLKkU3LY0RACs4lfRwxWc95yP/SlhwDPfA+kVMh8D2uzOUoKpBn20k/nTgbysMDf5Ad3qqq2Ev3go6H2hWTKb6v9keWTS6hSr51MUPdEDZ5ATWj8kbu3MYb9qino1d6XV4s/Vh3gZBAQvEkgnFI1fI3Eqlvn4bvp+qa51qu+/JMFGFwI/UnBYZ/hjRkowLnyOlm7rJgFh97v04OK6dvMIhYCjoU0RXYehXMeKr7/okQDBALFroCZ7GO2Wcw+kndx0GitMSB/xXE6WLhUsx4YgTx52nnbR+KBKalYKztrAuZAobN2ItrFOociVhs4WATc6GNlzoriGtwfd4kCC3t29IBnyQIiTU= ubuntu@ip-172-31-95-172"
 }
 
 # VPC Peering Connection Requestors side
