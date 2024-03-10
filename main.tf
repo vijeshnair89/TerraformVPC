@@ -9,6 +9,18 @@ provider "aws" {
 	region = "us-east-1"
 }
 
+output "instanceip1" {
+  value = aws_instance.instance1vpc01.public_ip
+}
+
+output "instanceip2" {
+  value = aws_instance.instance2vpc01.public_ip
+}
+
+output "instanceip3" {
+  value = aws_instance.instance1vpc02.public_ip
+}
+
 # variable "cidr1" {
 #    default = "10.0.0.0/16"
 # }
